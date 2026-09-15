@@ -74,9 +74,10 @@ st.markdown(
 # ---------------------------------------------------------
 @st.cache_data
 def load_data():
-    file_path = "2026 Data Test1 Final - Busy Buffet Dataset.xlsx"
+    import os
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "2026 Data Test1 Final - Busy Buffet Dataset.xlsx")
     xls = pd.ExcelFile(file_path)
-
     sheet_labels = {
         "133": "13/3 (ศุกร์)",
         "143": "14/3 (เสาร์)",
